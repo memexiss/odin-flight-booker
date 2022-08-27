@@ -1,0 +1,34 @@
+<%= form_with url: "bookings/new/", method: "get", local: true do |f| %>
+  <% @available_flights.each do |flight| %>
+    <% departure_airport = flight.from_airport.code %>
+    <% arrival_airport = flight.to_airport.code %>
+    <% selected_date = flight.scheduled_on.strftime('%B %d, %Y') %>
+    <% scheduled_time = flight.scheduled_on.strftime('%H:%M') %>
+    <% arrival_time = (flight.scheduled_on + (flight.duration/60).to_i.hours).strftime('%H:%M') %>
+
+    <div class="row">
+      <div class="col">
+        <%= radio_button_tag(:flight, flight.id, { checked: true }) %>
+      </div>
+
+            <div class="col">
+              <%= scheduled_time %><br/>
+              <%= departure_airport %>
+            </div>
+
+            <div class="col">
+              Nonstop<br/>
+              <%= (flight.duration/60) %> hours
+            </div>
+
+            <div class="col">
+              <%= arrival_time %><br/>
+              <%= arrival_airport %>
+            </div>
+          </div>
+  <% end %>
+<div class="col p-3">
+  <%= hidden_field_tag :pax, params[:pax] %>
+  <%= f.submit "Continue to passenger details", class: "btn btn-outline-primary" %>
+</div>
+<% end %>

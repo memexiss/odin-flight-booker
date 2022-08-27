@@ -5,12 +5,30 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="container text-center">
+      <div class="row mb-5">
+        <%= link_to root_path do %>
+          <h1 class="text-muted">
+            Flight Booker
+          </h1>
+        <% end %>
+      </div>
+    <% if flash[:notice] %>
+      <div class="notification is-primary global-notification">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="notification is-danger global-notification">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
