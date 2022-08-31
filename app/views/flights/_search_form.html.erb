@@ -3,8 +3,7 @@
   <% @year_options = Flight.all.map { |flight| flight.scheduled_on.year }.uniq %>
   <% @month_options = Flight.all.map { |flight| flight.scheduled_on.month }.uniq %>
   <% @day_options = Flight.all.map { |flight| flight.scheduled_on.day }.uniq %>
-
-  
+    
 <div class="row">
 
 <div class="col-sm-2">

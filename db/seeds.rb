@@ -12,9 +12,5 @@ airports = Airport.create([
 
 flights = Flight.create([
   { from_airport_id: airports.first.id, to_airport_id: airports.last.id, duration: 320, scheduled_on: "2022-12-25 07:00:00"},
-  { from_airport_id: airports.first.id, to_airport_id: airports.last.id, duration: 320, scheduled_on: "2022-11-12 09:00:00"},
-  { from_airport_id: airports.first.id, to_airport_id: airports.last.id, duration: 320, scheduled_on: "2022-10-19 11:00:00"},
-  { from_airport_id: airports.last.id, to_airport_id: airports.first.id, duration: 380, scheduled_on: "2022-09-26 07:00:00"},
-  { from_airport_id: airports.last.id, to_airport_id: airports.first.id, duration: 380, scheduled_on: "2022-09-05 09:00:00"},
-  { from_airport_id: airports.last.id, to_airport_id: airports.first.id, duration: 380, scheduled_on: "2022-12-16 11:00:00"}
+  { from_airport_id: airports.last.id, to_airport_id: airports.first.id, duration: 380, scheduled_on: "2022-10-16 11:00:00"}
 ])

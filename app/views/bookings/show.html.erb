@@ -1,14 +1,11 @@
-<section class="hero is-fullheight is-light is-bold">
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <div class="column is-half is-offset-one-quarter">
-        <h1 class="title">
+<section>
+        <h1>
           Trip summary
         </h1>
-        <h2 class="subtitle">
+        <h2 class="h3 text-info">
          <%= @booking.flight.scheduled_on.strftime('%d %B %Y') %>
         </h2>
-        <table class="table is-fullwidth">
+        <table class="table">
           <thead>
             <tr>
               <th>Departure</th>
@@ -26,7 +23,7 @@
         <h1 class="title">
           Passenger details
         </h1>
-        <table class="table is-fullwidth has-text-left">
+        <table class="table">
           <thead>
             <tr>
               <th>Passenger name</th>
@@ -44,7 +41,7 @@
         <h1 class="title">
           Contact details
         </h1>
-        <table class="table is-fullwidth has-text-left">
+        <table class="table">
           <thead>
             <tr>
               <th>Passenger name</th>
@@ -61,9 +58,5 @@
           </tbody>
         </table>
   
-        <%= link_to 'Book more flights', root_path, class: "button is-large is-dark is-outlined" %>
-
-      </div>
-    </div>
-  </div>
+        <%= link_to 'Book more flights', root_path, class: "btn btn-outline-primary" %>
 </section>

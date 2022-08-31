@@ -4,23 +4,19 @@
 <% scheduled_time = @selected_flight.scheduled_on.strftime('%H:%M') %>
 <% arrival_time = (@selected_flight.scheduled_on + (@selected_flight.duration/60).to_i.hours).strftime('%H:%M') %>
 
-<section class="hero is-fullheight is-light is-bold">
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <div class="columns is-8 is-variable ">
-        <div class="column has-text-left">
+<section class="container">
+      <div class="col">
+        <div class="col">
           <h1 class="title">
             Your trip summary
           </h1>
-          <h2 class="subtitle">
+          <h2 class="h3 text-info">
             <%= selected_date %> | <%= departure_airport %> - <%= arrival_airport %> | <%= scheduled_time %> - <%= arrival_time %>
           </h2>
         </div>
 
-        <div class="column is-three-fifths has-text-left">
+        <div class="col">
           <%= render "booking_form" %>
         </div>
       </div>
-    </div>
-  </div>
 </section>
